@@ -1,0 +1,60 @@
+📌 Newsletter Project – Pages & Flow
+1. index.php (Dashboard / Home)
+
+Entry page hai.
+
+Yahan se tum Add Newsletter, View Newsletter, aur Send Newsletter ke links dete ho.
+
+Basically ek control panel jaisa hai.
+
+2. add_newsletter.php
+
+Form jisme CKEditor use hota hai.
+
+Yahan admin Title, Category, Subcategory, Content enter karke newsletter save karta hai.
+
+Data database me save hota hai (newsletter_master table me).
+
+3. view_newsletter.php
+
+Table format me sari newsletters list hoti hain.
+
+Columns: ID, Title, Category, Date, Action buttons.
+
+Action buttons:
+
+View/Read More → post.php
+
+Send → newsletter_send.php
+
+4. post.php
+
+Jab Read More pe click karte ho, tab ek newsletter ka full content yahan show hota hai.
+
+Ye blog-post style page hota hai (title, category, date + content).
+
+5. newsletter_send.php
+
+Is page se subscribers ko email send hota hai.
+
+CKEditor ka HTML content convert hoke mail() ya PHPMailer se bheja jata hai.
+
+Headers me HTML format set karna zaroori hai.
+
+6. db.php
+
+Database connection ke liye.
+
+7. subscriber_master.php (⚠️ Yeh shayad tumne miss kiya hoga)
+
+Har newsletter system me ek Subscriber Table hota hai jisme users ka name, email, status hota hai.
+
+Iske bina newsletter_send.php randomly kisiko mail karega?
+
+Isliye zaroori hai ek page jisme subscribers add / list / delete kar sako.
+
+✅ Conclusion
+
+👉 Tumhare project ke main parts ban gaye hain.
+👉 Missing Page ho sakta hai "Subscriber Management Page" (Add Subscribers + List Subscribers).
+Iske bina tumhare newsletter system complete nahi hoga.

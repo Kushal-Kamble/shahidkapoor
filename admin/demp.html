@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <code>
+        <pre>Demo flow — step by step (what to open, what to click, what to say)
+
+Estimated live time: 8–12 minutes — follow exactly.
+
+1) Opening & Context (30–45s)
+
+Open browser to: http://localhost/newsletter-project-vishal/admin/login.php
+
+Login as admin / demo123.
+
+Say: “Ye admin panel hai — yahan se components, posts, newsletters aur subscribers manage karte hain.”
+
+2) Show DB schema (optional, quick) (30s)
+
+Open phpMyAdmin (http://localhost/phpmyadmin
+) or MySQL CLI.
+
+Show database firstvishal_newletter_projects tables: categories, component_master, posts, newsletter_master, newsletter_logs, subscribers.
+
+Say: “Schema simple hai — reusable components, posts, newsletter master + logs, subscribers”
+
+3) Components (30s)
+
+Open admin/components.php (or where listing is).
+
+Show the sample component (Sample Insight).
+
+Say: “Components are re-usable building blocks — images/text/links — used inside posts/newsletters.”
+
+4) Posts (1 min)
+
+Open admin/posts.php (http://localhost/newsletter-project-vishal/admin/posts.php).
+
+Click Add New Post → opens admin/post_add.php.
+
+Fill:
+
+Title: Demo Post for Newsletter
+
+Category: choose
+
+Component: choose Sample Insight
+
+Description (CKEditor): write short HTML, e.g., <p>Demo full post content. More details here.</p>
+
+Status: Published
+
+Click Save Post.
+
+After redirect, show the post listed on posts.php. Click Edit to show edit flow.
+
+Say: “Admin can create posts using components and rich HTML (CKEditor). Each post can be used as ‘Read More’ in newsletter.”
+
+5) Subscribers (1 min)
+
+Open admin/subscribers.php.
+
+Show list of subscribers (the seeded ones).
+
+Toggle one to inactive, toggle back to active to show functionality.
+
+Click Export CSV to download the CSV and open it.
+
+Say: “Subscribers are tracked; can export CSV and toggle active/inactive to control sends.”
+
+6) Create & Send Newsletter (core demo) (2–3 min)
+
+Open admin/newsletter_add.php (http://localhost/newsletter-project-vishal/admin/newsletter_add.php).
+
+Fill the form live:
+
+Title: Test Newsletter
+
+Category: pick same category
+
+Components: select the sample component (multi-select)
+
+Read More (optional): select the post you created earlier (this will make the Read More link)
+
+CKEditor: write a small intro: “This is a test newsletter. Read more below.”
+
+Send Type: Send Now
+
+Click Save (or Send).
+
+Expected: page shows success message: “Newsletter created & sent!”
+
+While sending (or right after), open Mailtrap inbox (or check your test email). Show the received email:
+
+Show the email subject and short content.
+
+Click Read More inside the email — it should open:
+
+http://localhost/newsletter-project-vishal/public/post.php?id=<post_id>
+
+
+(example you said: …/post.php?id=3) — click it and show the full post page with CKEditor content and image if any.
+
+Say: “See — email contains short snippet + Read More link which opens the live post.”
+
+7) Show logs (1 min)
+
+Back to admin → admin/newsletters.php → click the Logs icon or open admin/newsletter_logs.php?id=<newsletter_id>.
+
+Show entries in newsletter_logs — each subscriber row shows sent or failed.
+
+Say: “We store per-recipient send status and error — useful for monitoring and retries.”</pre>
+    </code>
+
+
+
+    <code><pre>Handy commands & links (copy-paste to demo)
+
+App root: http://localhost/newsletter-project-vishal
+
+Admin login: http://localhost/newsletter-project-vishal/admin/login.php
+
+Add post: http://localhost/newsletter-project-vishal/admin/post_add.php
+
+Posts list: http://localhost/newsletter-project-vishal/admin/posts.php
+
+Subscribers: http://localhost/newsletter-project-vishal/admin/subscribers.php
+
+Newsletter create: http://localhost/newsletter-project-vishal/admin/newsletter_add.php
+
+Newsletters list: http://localhost/newsletter-project-vishal/admin/newsletters.php
+
+Newsletter logs: http://localhost/newsletter-project-vishal/admin/newsletter_logs.php?id=<id>
+
+Public post: http://localhost/newsletter-project-vishal/public/post.php?id=<id></pre></code>
+    
+</body>
+</html>
